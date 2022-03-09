@@ -32,11 +32,3 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'filePath'
     TargetPath: '$(Build.ArtifactStagingDirectory)'
-
-- task: S3Upload@1
-  inputs:
-    awsCredentials: 'aws_user'
-    regionName: 'ap-south-1'
-    bucketName: 'php_bucket'
-    globExpressions: '**'
-    createBucket: true
