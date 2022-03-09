@@ -22,7 +22,7 @@ steps:
     php -version
   displayName: 'Use PHP version $(phpVersion)'
 - download: current
-  artifact: WebApp
+  artifact: $(System.DefaultWorkingDirectory)/
   patterns: '**/*.php'
 
 - script: composer install --no-interaction --prefer-dist
