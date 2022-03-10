@@ -26,8 +26,8 @@ steps:
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
 
-- task: DownloadPipelineArtifact@2
+- task: ArchiveFiles@2
   inputs:
-    buildType: 'current'
-    artifactName: 'test'
-    targetPath: '$(Pipeline.Workspace)'
+    rootFolderOrFile: '$(system.defaultWorkingDirectory)'
+    includeRootFolder: false
+- task: PublishBuildArtifacts@1
