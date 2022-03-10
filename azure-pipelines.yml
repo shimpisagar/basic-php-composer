@@ -31,4 +31,13 @@ steps:
     rootFolderOrFile: '$(system.defaultWorkingDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
+- task: S3Upload@1
+  inputs:
+    awsCredentials: 'aws_user'
+    regionName: 'ap-south-1'
+    bucketName: 'phpazure'
+    sourceFolder: '$(system.defaultWorkingDirectory)'
+    globExpressions: '**'
+    createBucket: true
+
 
