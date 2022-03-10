@@ -30,4 +30,7 @@ steps:
   inputs:
     rootFolderOrFile: '$(system.defaultWorkingDirectory)'
     includeRootFolder: false
+    archiveType: zip
+    archiveFile: '$(system.defaultWorkingDirectory)/deploy.zip'
 - task: PublishBuildArtifacts@1
+
