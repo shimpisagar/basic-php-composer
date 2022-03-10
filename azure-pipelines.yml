@@ -26,9 +26,8 @@ steps:
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
 
-- task: PublishBuildArtifacts@1
+- task: DownloadPipelineArtifact@2
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'filePath'
-    TargetPath: '$(Build.ArtifactStagingDirectory)'
+    buildType: 'current'
+    artifactName: 'test'
+    targetPath: '$(Pipeline.Workspace)'
